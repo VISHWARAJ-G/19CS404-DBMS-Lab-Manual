@@ -87,6 +87,9 @@ Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 n = 1535  
 Reversed number is 5351
 
+### Code and Output:
+![image](https://github.com/user-attachments/assets/337a3ccf-e313-4e9b-83ca-20b3c99762c1)
+
 ---
 
 ## 5. Write a PL/SQL program to find the largest of three numbers
@@ -99,6 +102,10 @@ Reversed number is 5351
 **Expected Output:**  
 a = 10, b = 9, c = 15  
 Largest of three number is 15
+
+### Code and Output:
+![image](https://github.com/user-attachments/assets/4de74734-3821-4713-844b-bab8890b999f)
+
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
