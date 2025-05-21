@@ -95,6 +95,30 @@ SELECT * FROM employee_log;
 **Expected Output:**
 - If an attempt is made to delete a record from `sensitive_data`, an error message is raised, e.g., `ERROR: Deletion not allowed on this table.`
 
+### Code:
+```
+CREATE TABLE sensitive_data (
+    record_id INT PRIMARY KEY,
+    info VARCHAR2(100)
+);
+
+INSERT INTO sensitive_data (record_id, info)
+VALUES (1, 'Highly confidential'),
+       (2, 'Serious');
+
+CREATE OR REPLACE TRIGGER prevent_sensitive_deletion
+BEFORE DELETE ON sensitive_data
+FOR EACH ROW
+BEGIN
+    RAISE_APPLICATION_ERROR(-20001, 'ERROR: Deletion not allowed on this table.');
+END;
+/
+
+DELETE FROM sensitive_data WHERE record_id = 1;
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/5c154863-2287-4244-8d18-a9be54d33870)
 ---
 
 ## 3. Write a trigger to automatically update a `last_modified` timestamp.
@@ -104,6 +128,36 @@ SELECT * FROM employee_log;
 
 **Expected Output:**
 - The `last_modified` column in the `products` table is updated automatically to the current date and time when any record is updated.
+
+### Code:
+```
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR2(100),
+    price NUMBER(10, 2),
+    last_modified TIMESTAMP
+);
+
+INSERT INTO products (product_id, product_name, price)
+VALUES (1, 'Laptop', 45000),(2,'TV',55050),(3,'Mobile Phone',25000);
+
+CREATE OR REPLACE TRIGGER update_last_modified
+BEFORE UPDATE ON products
+FOR EACH ROW
+BEGIN
+    :NEW.last_modified := SYSTIMESTAMP;
+END;
+/
+
+UPDATE products
+SET price = 46000
+WHERE product_id = 1;
+
+SELECT * FROM products;
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/e3948fef-69bc-4d2c-9fd4-f042c99ff632)
 
 ---
 
