@@ -169,16 +169,6 @@ SELECT * FROM products;
 **Expected Output:**
 - The `audit_log` table will maintain a count of how many updates have been made to the `customer_orders` table.
 
----
-
-## 5. Write a trigger that checks a condition before allowing insertion into a table.
-**Steps:**
-- Write a **BEFORE INSERT** trigger on the `employees` table to check if the inserted salary meets a specific condition (e.g., salary must be greater than 3000).
-- If the condition is not met, raise an error to prevent the insert.
-
-**Expected Output:**
-- If the inserted salary in the `employees` table is below the condition (e.g., salary < 3000), the insert operation is blocked, and an error message is raised, such as: `ERROR: Salary below minimum threshold.`
-
 ### Code:
 ```
 CREATE TABLE customer_orders (
@@ -218,6 +208,15 @@ SELECT * FROM audit_log;
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/a6768a2d-0c11-4ed8-9eca-08863a1daacf)
+---
+
+## 5. Write a trigger that checks a condition before allowing insertion into a table.
+**Steps:**
+- Write a **BEFORE INSERT** trigger on the `employees` table to check if the inserted salary meets a specific condition (e.g., salary must be greater than 3000).
+- If the condition is not met, raise an error to prevent the insert.
+
+**Expected Output:**
+- If the inserted salary in the `employees` table is below the condition (e.g., salary < 3000), the insert operation is blocked, and an error message is raised, such as: `ERROR: Salary below minimum threshold.`
 
 
 ## RESULT
