@@ -37,7 +37,7 @@ END;
 **Expected Output:**  
 Greater number is: 80
 
-**Code and Output:**
+### Code and Output:
 ![image](https://github.com/user-attachments/assets/06f36ab4-1b4a-46d8-ab64-5d65cdcfd5c0)
 
 ---
@@ -53,7 +53,7 @@ Greater number is: 80
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
 
-**Code and Output:**
+### Code and Output:
 ![image](https://github.com/user-attachments/assets/5ef2128d-c72d-40a4-99b3-9a868ff33c7b)
 
 ---
@@ -70,7 +70,7 @@ Sum of first 10 natural numbers is: 55
 n = 7  
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 
-**Code and Output:**
+### Code and Output:
 ![Uploading image.png…]()
 
 ---
