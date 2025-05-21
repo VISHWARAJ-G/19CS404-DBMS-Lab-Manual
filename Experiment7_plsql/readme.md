@@ -37,6 +37,10 @@ END;
 **Expected Output:**  
 Greater number is: 80
 
+**Code and Output:**
+![image](https://github.com/user-attachments/assets/bbfaa921-90c2-4e37-bf44-7a41f8122f87)
+
+
 ---
 
 ## 2. Write a PL/SQL program to Calculate Sum of First N Natural Numbers
@@ -49,6 +53,9 @@ Greater number is: 80
 
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
+
+**Code and Output:**
+![image](https://github.com/user-attachments/assets/82ab570a-9130-41b7-8912-2821fb41f5c4)
 
 ---
 
@@ -63,6 +70,9 @@ Sum of first 10 natural numbers is: 55
 **Expected Output:**  
 n = 7  
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
+
+**Code and Output:**
+![image](https://github.com/user-attachments/assets/f2419082-2104-44e3-ac42-6b03bd13965b)
 
 ---
 
