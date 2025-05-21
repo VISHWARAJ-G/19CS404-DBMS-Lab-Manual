@@ -179,5 +179,46 @@ SELECT * FROM products;
 **Expected Output:**
 - If the inserted salary in the `employees` table is below the condition (e.g., salary < 3000), the insert operation is blocked, and an error message is raised, such as: `ERROR: Salary below minimum threshold.`
 
+### Code:
+```
+CREATE TABLE customer_orders (
+    order_id INT PRIMARY KEY,
+    customer_name VARCHAR2(100),
+    product_name VARCHAR2(100),
+    quantity INT
+);
+
+INSERT INTO customer_orders (order_id, customer_name, product_name, quantity)
+VALUES (1, 'Vishwaraj', 'Laptop', 2),(2,'Pruthviraj','Mobile',1);
+
+CREATE TABLE audit_log (
+    table_name VARCHAR2(50) PRIMARY KEY,
+    update_count INT
+);
+
+INSERT INTO audit_log (table_name, update_count)
+VALUES ('CUSTOMER_ORDERS', 0);
+
+CREATE OR REPLACE TRIGGER track_order_updates
+AFTER UPDATE ON customer_orders
+FOR EACH ROW
+BEGIN
+    UPDATE audit_log
+    SET update_count = update_count + 1
+    WHERE table_name = 'CUSTOMER_ORDERS';
+END;
+/
+
+UPDATE customer_orders
+SET quantity = 3
+WHERE order_id = 1;
+
+SELECT * FROM audit_log;
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/a6768a2d-0c11-4ed8-9eca-08863a1daacf)
+
+
 ## RESULT
 Thus, the PL/SQL trigger programs were written and executed successfully.
