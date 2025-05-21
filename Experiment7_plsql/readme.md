@@ -71,7 +71,8 @@ n = 7
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 
 ### Code and Output:
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/0a134758-d205-4eeb-b7b6-b18e6d3aebd9)
+
 
 ---
 
